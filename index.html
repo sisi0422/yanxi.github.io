@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘彦晞 | AI训练师个人作品集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #fff9f5;
+            color: #4a3f35;
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            animation: fadeSlideDown 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .avatar-box {
+            width: 110px;
+            height: 110px;
+            background-color: #f7d9c4;
+            border-radius: 50%;
+            margin: 0 auto 22px;
+            position: relative;
+        }
+
+        .ear {
+            width: 36px;
+            height: 36px;
+            background: #f0c8b0;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+        }
+        .ear-left { left: 6px; }
+        .ear-right { right: 6px; }
+
+        .bear-face {
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .eye {
+            width: 8px;
+            height: 8px;
+            background: #4a3f35;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 14px;
+        }
+        .smile {
+            width: 22px;
+            height: 11px;
+            border-bottom: 2px solid #4a3f35;
+            border-radius: 0 0 12px 12px;
+            margin: 8px auto 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #6d5b49;
+            margin-bottom: 10px;
+        }
+
+        .header-desc {
+            font-size: 1.1rem;
+            color: #857463;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 16px rgba(235, 212, 195, 0.35);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 0.7s ease forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 9px 26px rgba(235, 212, 195, 0.48);
+        }
+
+        .card:nth-of-type(2) { animation-delay: 0.15s; }
+        .card:nth-of-type(3) { animation-delay: 0.3s; }
+        .card:nth-of-type(4) { animation-delay: 0.45s; }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #786552;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-title::before {
+            content: "🧸";
+        }
+
+        /* 技能网格布局 */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: #fff5ee;
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 5px solid #f2c5aa;
+            transition: background 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: #ffeede;
+        }
+
+        .skill-card h3 {
+            color: #6b523f;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        /* 列表样式 */
+        .ability-list {
+            padding-left: 22px;
+        }
+        .ability-list li {
+            margin-bottom: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 28px;
+            border-top: 1px solid #f3e5db;
+            color: #928170;
+        }
+
+        /* 动画 */
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .skill-grid { grid-template-columns: 1fr; }
+            .card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header>
+            <div class="avatar-box">
+                <div class="ear ear-left"></div>
+                <div class="ear ear-right"></div>
+                <div class="bear-face">
+                    <span class="eye"></span>
+                    <span class="eye"></span>
+                    <div class="smile"></div>
+                </div>
+            </div>
+            <h1>刘彦晞</h1>
+            <p class="header-desc">AI训练师 | 大模型微调 · 人类反馈对齐 · RAG落地实践</p>
+        </header>
+
+        <!-- 个人简介 -->
+        <section class="card">
+            <h2 class="card-title">个人简介</h2>
+            <p>
+                专注大模型全流程训练与对齐工作，具备从数据集搭建到模型落地的完整实操经验。深耕AI数据治理、指令微调、人类偏好标注、奖励模型训练与强化学习优化领域，依托SFT、RM、PPO技术完成大模型价值观对齐与能力优化；同时熟练运用RAG检索增强技术，解决大模型知识滞后、领域问答失真等痛点，面向企业知识库、行业智能问答等场景提供模型优化落地解决方案。工作中注重数据质量把控、模型效果迭代与内容安全合规，以专业严谨的方式持续打磨大模型的可用性、准确性与稳定性。
+            </p>
+        </section>
+
+        <!-- 核心工作职责 -->
+        <section class="card">
+            <h2 class="card-title">核心工作职责</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>SFT 有监督微调</h3>
+                    <p>负责领域级高质量指令数据集的设计、采集、清洗、去重、脱敏与格式标准化；基于开源基座模型开展有监督微调，规范模型输出逻辑与格式，对齐基础用户指令偏好，提升模型文案创作、逻辑推理、专业问答等基础能力，为后续模型对齐筑牢基础。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>RM 奖励模型训练</h3>
+                    <p>设计模型回答优劣评估规范，开展多版本模型输出的人工排序标注，构建偏好型训练数据集；基于偏好数据训练奖励模型，量化评价回答的准确性、逻辑性、完整性与合规性，为PPO强化学习提供标准化的打分依据。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>PPO 近端策略优化</h3>
+                    <p>依托训练完成的奖励模型，通过PPO算法实现大模型的强化学习人类对齐，约束模型幻觉、错误推导、违规内容生成等问题，统一模型输出风格，优化回答严谨度与安全性，让模型输出贴合业务规范与人类价值导向。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>RAG 检索增强生成</h3>
+                    <p>搭建私有知识库全链路系统，包含文档解析、文本切片、向量化存储、多路检索、结果重排等环节；结合大模型实现专业领域精准问答，弥补模型知识时效性不足的缺陷，落地智能知识库、行业咨询、企业客服等场景应用。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业能力汇总 -->
+        <section class="card">
+            <h2 class="card-title">专业能力总结</h2>
+            <ul class="ability-list">
+                <li>熟练掌握大模型对齐全流程：数据构建→SFT有监督微调→偏好人工标注→奖励模型训练→PPO强化学习优化</li>
+                <li>精通各类训练数据集的质量管控，擅长多轮对话、复杂指令、行业场景类样本设计与数据纠错治理</li>
+                <li>独立完成RAG系统搭建与调优，能够针对召回精度、回答幻觉等问题做链路迭代优化</li>
+                <li>具备模型效果评测、问题归因分析能力，可通过数据迭代、参数调优持续提升模型业务适配能力</li>
+                <li>熟悉大模型内容安全规范，能够完成偏见修正、风险内容过滤、输出合规约束等模型优化工作</li>
+            </ul>
+        </section>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2026 刘彦晞 | AI训练师个人作品集 🧸</p>
+        </footer>
+    </div>
+</body>
+</html>
